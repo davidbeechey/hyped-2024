@@ -103,8 +103,6 @@
   .section1 {
     display: flex;
     flex-direction: column;
-    margin-bottom: 130px;
-    height: 165px;
     width: 100%;
   }
   .timer-card {
@@ -128,6 +126,6 @@
     width: 95%;
   }
   .section1 {
-    margin-bottom: 200px;
+    margin-bottom: 20px;
   }
 }

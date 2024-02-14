@@ -41,7 +41,7 @@ export const ColorInverter = () => {
 export default function GridDsiplay() {
   const [selected, setSelected] = useState<Card>('VELOCITY');
   const [clicked, setClicked] = useState(false);
- 
+
   const switched = () => {
     ColorInverter();
     !clicked && localStorage.getItem('color-theme') === 'dark'
@@ -51,7 +51,7 @@ export default function GridDsiplay() {
 
   return (
     <main className="w-[360px] md:w-[720px] lg:w-[1000px] mx-auto py-12">
-      <div className="nav p-2 mb-3">
+      <div className="nav p-2 mb-3 gap-4">
         <div className="heading  p-2">
           {' '}
           <div>
@@ -94,12 +94,12 @@ export default function GridDsiplay() {
           )}
         </div>
       </div>
-      <div className="section1 flex row gap-3 w-[100%] h-[170px]">
+      <div className="section1 flex row gap-3 w-[100%]">
         <DigitalTimer />
-        <Gauge />
+        {/* <Gauge /> */}
       </div>
 
-      <div className="mt-5 top-card"> {CARDS[selected]}</div>
+      <div className="top-card"> {CARDS[selected]}</div>
       {/* KPI section */}
       <div className="top-card">
         <Grid numItemsMd={2} className="mt-6 gap-6 w-full">
