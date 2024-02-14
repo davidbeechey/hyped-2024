@@ -59,9 +59,9 @@ export default function LevitationHeight() {
   const { data, error } = useQuery<LevitationHeightResponse>(
     'levitation-height',
     async () =>
-      await fetch(
-        `${process.env.NEXT_PUBLIC_TELEMETRY_SERVER}/pods/pod_1/public-data/levitation-height?start=0`,
-      ).then((res) => res.json()),
+      await fetch(`/pods/pod_1/public-data/levitation-height?start=0`).then(
+        (res) => res.json(),
+      ),
     {
       refetchInterval: 1000,
     },

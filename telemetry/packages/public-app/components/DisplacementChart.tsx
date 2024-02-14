@@ -11,9 +11,9 @@ export const DisplacementChart = () => {
   const { data, isLoading, isError } = useQuery(
     'displacement',
     async () =>
-      (await fetch(
-        `${process.env.NEXT_PUBLIC_TELEMETRY_SERVER}/pods/pod_1/public-data/displacement?start=0`,
-      ).then((res) => res.json())) as {
+      (await fetch(`/pods/pod_1/public-data/displacement?start=0`).then((res) =>
+        res.json(),
+      )) as {
         id: 'displacement';
         timestamp: string;
         value: number;
@@ -32,7 +32,6 @@ export const DisplacementChart = () => {
         };
       })
     : [];
-
 
   return (
     <Card className="h-[560px]" decoration="top" decorationColor="red">

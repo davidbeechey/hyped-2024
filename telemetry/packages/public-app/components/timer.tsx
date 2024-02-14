@@ -8,9 +8,9 @@ export function DigitalTimer() {
   const { data } = useQuery(
     'launch-time',
     async () =>
-      (await fetch(
-        `${process.env.NEXT_PUBLIC_TELEMETRY_SERVER}/pods/pod_1/public-data/launch-time`,
-      ).then((res) => res.json())) as any,
+      (await fetch(`/pods/pod_1/public-data/launch-time`).then((res) =>
+        res.json(),
+      )) as any,
     {
       refetchInterval: 1000,
     },

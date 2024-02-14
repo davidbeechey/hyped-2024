@@ -8,9 +8,9 @@ export const VelocityGraph = () => {
   const { data, isLoading, isError } = useQuery(
     'velocity',
     async () =>
-      (await fetch(
-        `${process.env.NEXT_PUBLIC_TELEMETRY_SERVER}/pods/pod_1/public-data/velocity?start=0`,
-      ).then((res) => res.json())) as {
+      (await fetch(`/pods/pod_1/public-data/velocity?start=0`).then((res) =>
+        res.json(),
+      )) as {
         id: 'velocity';
         timestamp: string;
         value: number;
